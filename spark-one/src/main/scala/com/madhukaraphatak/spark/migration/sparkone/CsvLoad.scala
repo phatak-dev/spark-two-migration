@@ -6,15 +6,15 @@ import org.apache.spark.SparkContext
 
 object CsvLoad {
 
-  def main(args:Array[String]) = {
+  def main(args: Array[String]) = {
 
-     val sparkConf = new SparkConf().setMaster("local").setAppName("mapexample")
-     val sparkContext = new SparkContext(sparkConf)
-     val sqlContext = SQLContext.getOrCreate(sparkContext)
+    val sparkConf = new SparkConf().setMaster("local").setAppName("mapexample")
+    val sparkContext = new SparkContext(sparkConf)
+    val sqlContext = SQLContext.getOrCreate(sparkContext)
 
-     val loadedDF = sqlContext.read.format("com.databricks.spark.csv").option("header","true").load("../test_data/sales.csv")
-     
-     loadedDF.show()
+    val loadedDF = sqlContext.read.format("com.databricks.spark.csv").option("header", "true").load("../test_data/sales.csv")
+
+    loadedDF.show()
 
   }
 }
