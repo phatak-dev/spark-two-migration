@@ -11,9 +11,9 @@ object CsvJoin {
     val sparkConf = new SparkConf().setMaster("local").setAppName("mapexample")
     val sparkContext = new SparkContext(sparkConf)
     val sqlContext = SQLContext.getOrCreate(sparkContext)
-
+    // Using 2007.csv from http://stat-computing.org/dataexpo/2009/the-data.html
     val loadedDf = sqlContext.read.format("com.databricks.spark.csv").
-    option("header", "true").load(args(0))
+      option("header", "true").load(args(0))
 
     val miniDf = loadedDf.limit(10000)
 
