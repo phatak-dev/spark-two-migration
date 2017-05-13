@@ -18,6 +18,7 @@ object CrossJoin {
     //cross join the data
     val crossJoinDf = loadedDf.join(loadedDf)
    // count the joined df
+    println(crossJoinDf.explain())
     println(crossJoinDf.count)
   }
 }
