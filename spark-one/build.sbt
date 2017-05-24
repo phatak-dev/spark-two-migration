@@ -17,6 +17,7 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-mllib" % sparkVersion,
   "org.apache.spark" %% "spark-streaming" % sparkVersion,
   "org.apache.spark" %% "spark-hive" % sparkVersion,
+  "org.apache.spark" %% "spark-streaming-zeromq" % sparkVersion,
   "com.databricks" %% "spark-csv" % "1.5.0"
 )
     
