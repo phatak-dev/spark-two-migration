@@ -19,6 +19,6 @@ object SubQueries {
     // Add max sales per item
     val dfWithMaxPerItem = sparkSession.sql("select A.itemId, (select max(amountPaid) from sales where itemId=A.itemId) max_amount from sales A") 
     dfWithMaxPerItem.explain(true)
-//    dfWithMaxPerItem.show()
+    dfWithMaxPerItem.show()
  }
 }
