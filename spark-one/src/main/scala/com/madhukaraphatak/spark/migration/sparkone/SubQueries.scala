@@ -22,5 +22,11 @@ object SubQueries {
     val max_amount = sqlContext.sql("select max(amountPaid) as max_amount from sales").first.getDouble(0)
     val dfWithMaxAmount = sqlContext.sql(s"select *, ($max_amount) as max_amount from sales")
     dfWithMaxAmount.show()
+
+    // Add max amount per item id using left outer join
+
+    val dfWithMaxPerItem = sqlContext.sql("""select A.itemId, B.max_amount  from sales A left outer join ( select itemId, max(amountPaid) max_amount 
+            from sales B group by itemId) B where A.itemId = B.itemId""")
+    dfWithMaxPerItem.show()
   }
 }
