@@ -13,7 +13,7 @@ object SubQueries {
     val sqlContext = SQLContext.getOrCreate(sparkContext)
     // Using 2007.csv from http://stat-computing.org/dataexpo/2009/the-data.html
     val loadedDf = sqlContext.read.format("com.databricks.spark.csv").
-      option("header", "true").option("inferSchema","true").load("../test_data/sales.csv")
+      option("header", "true").option("inferSchema", "true").load("../test_data/sales.csv")
 
     loadedDf.registerTempTable("sales")
 

@@ -8,3 +8,5 @@ dependency-reduced-pom.xml
 *.swp
 *.swo
 todo*
+*.log
+metastore_db
