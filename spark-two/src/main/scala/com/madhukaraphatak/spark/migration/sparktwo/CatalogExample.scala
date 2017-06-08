@@ -24,5 +24,12 @@ object CatalogExample {
       "header" -> "true"))
     sparkSession.table("sales_external").show()
 
+
+    //additional functionalities
+    
+    //list functions
+    sparkSession.catalog.listFunctions.show()
+    //list columns of a table
+    sparkSession.catalog.listColumns("sales").show()
   }
 }
