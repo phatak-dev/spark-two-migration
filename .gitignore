@@ -6,7 +6,7 @@ project/target
 dependency-reduced-pom.xml
 *.pdf
 *.swp
-*.swo
+*.sw*
 todo*
 *.log
 metastore_db
