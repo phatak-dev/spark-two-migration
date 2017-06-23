@@ -17,6 +17,7 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-mllib" % sparkVersion,
   "org.apache.spark" %% "spark-streaming" % sparkVersion,
   "org.apache.spark" %% "spark-hive" % sparkVersion,
-  "org.apache.bahir" %% "spark-streaming-zeromq" % sparkVersion
+  "org.apache.bahir" %% "spark-streaming-zeromq" % sparkVersion,
+  "mysql" % "mysql-connector-java" %  "5.1.6"
 )
     
