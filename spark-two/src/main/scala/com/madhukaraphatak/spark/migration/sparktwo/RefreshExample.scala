@@ -19,7 +19,9 @@ object RefreshExample {
     // refresh table 
     sparkSession.catalog.refreshTable("sales")
     println("number of records after refresh is " + sparkSession.table("sales").count)
- 
-
+   //refresh table by path
+    
+   sparkSession.catalog.refreshByPath("../test_data/sales.csv")
+   println("number of records after refresh by path is "+ loadedDF.count)
   }
 }
